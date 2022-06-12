@@ -1,0 +1,19 @@
+{
+  "name": "pq.ts",
+  "version": "1.0.0",
+  "description": "PQ is a language written in Typescript. It is a W.I.P.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealBlueta/pq.ts.git"
+  },
+  "author": "RealBlueta",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/RealBlueta/pq.ts/issues"
+  },
+  "homepage": "https://github.com/RealBlueta/pq.ts#readme"
+}
