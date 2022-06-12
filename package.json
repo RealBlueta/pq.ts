@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RealBlueta/pq.ts/issues"
   },
-  "homepage": "https://github.com/RealBlueta/pq.ts#readme"
+  "homepage": "https://github.com/RealBlueta/pq.ts#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.42"
+  }
 }
