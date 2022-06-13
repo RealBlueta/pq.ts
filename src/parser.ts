@@ -1,1 +1,5 @@
-export default class Parser {}
+export default class Parser {
+    constructor() {}
+
+    run() {}
+}
