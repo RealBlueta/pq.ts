@@ -26,4 +26,4 @@ process.exit((
         }
         return 0;
     }
-)(0, process.argv));
+)(process.argv.length, process.argv));
