@@ -68,7 +68,7 @@ export default class Lexer {
 				continue;
             }
 
-			if ("\"'".includes(this.current()!)) {
+			if ("\"'`".includes(this.current()!)) {
 				this.lex_string(tokens);
 				continue;
             }
@@ -185,14 +185,14 @@ export default class Lexer {
     lex_string(tokens: Token[]): void {
         const pos = this.position();
 		let string = '';
-		this.advance(2); // skip " '
-		while (this.current() && !("\"'".includes(this.current()!))) {
+		this.advance(1); // skip " '
+		while (this.current() && !("\"'`".includes(this.current()!))) {
 			string += this.current();
 			this.advance();
         }
 		if (!this.current()) 
 			throw new LexerError("Unclosed string literal", pos);
-		this.advance(2); // skip " '
+		this.advance(1); // skip " '
 		tokens.push(new Token(TokenType.String, pos, string));
     }
     
