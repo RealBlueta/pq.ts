@@ -174,7 +174,14 @@ export default class Lexer {
     }
 
     lex_comment(tokens: Token[]): void {
-        TODO('comment');
+        const pos = this.position();
+		this.advance(2); // skip both /
+		let comment = '';
+		while (this.current() && !(this.current() == '\n')) {
+			comment += this.current();
+			this.advance();
+        }
+		tokens.push(new Token(TokenType.Comment, pos, comment.trimStart()));
     }
 
     lex_string(tokens: Token[]): void {
