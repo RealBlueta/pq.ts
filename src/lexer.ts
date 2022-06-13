@@ -187,14 +187,15 @@ export default class Lexer {
     lex_string(tokens: Token[]): void {
         const pos = this.position();
 		let string = '';
+        let string_type = this.current();
 		this.advance(1); // skip " '
 		while (this.current()) {
-            if (this.current() == '\\') {
+            if (this.current() == '\\' && this.peek(1) == string_type) {
                 this.advance();
                 string += this.current();
                 this.advance();
             }
-            if ('\'"`'.includes(this.current()!))
+            if (this.current() == string_type)
                 break;
 			string += this.current();
             this.advance();
