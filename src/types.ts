@@ -1,5 +1,3 @@
-import Lexer from "./lexer";
-
 export type Position = {
     row: number;
     column: number;
