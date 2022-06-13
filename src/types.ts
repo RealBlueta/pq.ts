@@ -23,6 +23,7 @@ export enum TokenType {
     Comma,
     Equals,
     Semicolon,
+    Colon,
     Underscore,
     And,
     Caret,

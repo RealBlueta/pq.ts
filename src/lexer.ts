@@ -53,7 +53,7 @@ export default class Lexer {
 				continue;
             }
 
-			if ('.,=;_&^$#@!'.includes(this.current()!)) {
+			if ('.,=:;_&^$#@!'.includes(this.current()!)) {
 				this.lex_etc(tokens);
 				continue;
             }
@@ -155,6 +155,7 @@ export default class Lexer {
         if (this.current() == '.') type = TokenType.Period;
 		else if (this.current() == ',') type = TokenType.Comma;
 		else if (this.current() == ';') type = TokenType.Semicolon;
+		else if (this.current() == ':') type = TokenType.Colon;
 		else if (this.current() == '=') type = TokenType.Equals;
 		else if (this.current() == '_') type = TokenType.Underscore;
 		else if (this.current() == '&') type = TokenType.And;
