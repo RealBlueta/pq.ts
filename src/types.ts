@@ -15,6 +15,7 @@ export enum TokenType {
     Minus,
     Asterisk,
     Backslash,
+    Slash,
     Percent,
     GreaterThan,
     LessThan,
