@@ -12,7 +12,7 @@ process.exit((
         if (args.length < 1) return usage();
         try {
             const contents: string = readFileSync(args[0]).toString();
-            const tokens = new Lexer(contents).run();
+            const tokens = new Lexer(contents, args[0]).run();
             for (let token of tokens) {
                 console.log(token);
             }

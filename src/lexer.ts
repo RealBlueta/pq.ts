@@ -1,16 +1,14 @@
 import { Token } from "./types";
 
 export default class Lexer {
-    private src: string;
-    private row: number;
-    private col: number;
-    private cursor: number;
+    cursor: number;
+    row: number;
+    col: number;
 
-    constructor(contents: string) {
-        this.src = contents;
+    constructor(private src: string, public file_name: string) {
+        this.cursor = 0;
         this.row = 0;
         this.col = 0;
-        this.cursor = 0;
     }
 
     run(): Token[] { 

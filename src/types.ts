@@ -1,3 +1,5 @@
+import Lexer from "./lexer";
+
 export type Position = {
     line: number;
     column: number;
@@ -34,6 +36,13 @@ export enum TokenType {
     String,
     Comment,
     EOF
+}
+
+export class LexerError extends Error {
+    constructor(message: string, lexer: Lexer) {
+        super();
+        this.message = `${message} (${lexer.file_name}:${lexer.row}:${lexer.col})`;
+    }
 }
 
 export class Token {
