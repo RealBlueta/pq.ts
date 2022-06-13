@@ -40,7 +40,7 @@ export enum TokenType {
 export class LexerError extends Error {
     constructor(message: string, position: Position) {
         super();
-        this.message = `${message} (${position.file}:${position.row}:${position.column})`;
+        this.message = `${message} (${position.file}:${position.row+1}:${position.column + 1})`;
         this.stack = undefined;
     }
 }
