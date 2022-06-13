@@ -32,7 +32,7 @@ export default class Lexer {
         const tokens: Token[] = []; 
         while (this.current()) {
 			if (' \r'.includes(this.current()!)) {
-				this.consume_space();
+                this.advance();
 				continue;
             }
 							
@@ -107,10 +107,6 @@ export default class Lexer {
     }
 
     // Lexing Functions (Consumers)
-    consume_space(): void {
-        this.advance();
-    }
-
     consume_newline(): void {
         this.cursor += 1;
         this.col = 0;
