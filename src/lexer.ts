@@ -25,7 +25,7 @@ export default class Lexer {
             row: this.row,
             column: this.col,
             file: this.file_name
-        }
+        };
     }
 
     run(): Token[] { 
