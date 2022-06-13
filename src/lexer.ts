@@ -1,4 +1,4 @@
-import { Position, Token, TokenType } from "./types";
+import { Position, Token, TokenType } from "./token";
 
 class LexerError extends Error {
     constructor(message: string, position: Position) {
