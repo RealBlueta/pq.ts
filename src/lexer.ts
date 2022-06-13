@@ -194,6 +194,7 @@ export default class Lexer {
                 this.advance();
                 string += this.current();
                 this.advance();
+                continue;
             }
             if (this.current() == string_type)
                 break;
