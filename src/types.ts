@@ -42,6 +42,7 @@ export class LexerError extends Error {
     constructor(message: string, lexer: Lexer) {
         super();
         this.message = `${message} (${lexer.file_name}:${lexer.row}:${lexer.col})`;
+        this.stack = undefined;
     }
 }
 
