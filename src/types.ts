@@ -4,15 +4,6 @@ export type Position = {
     file: string;
 };
 
-export enum ExpressionType {
-    Binary = 'BinaryExpression',
-    Block = 'BlockExpression',
-    FunctionDecleration = 'FunctionDeclerationExpression',
-    VariableDecleration = 'VariableDeclerationExpression',
-    Call = 'CallExpression',
-    Access = 'AccessExpresion'
-}
-
 export enum TokenType {
     LeftParen = 'LeftParen',
     RightParen = 'RightParen',
