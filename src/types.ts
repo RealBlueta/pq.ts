@@ -32,6 +32,8 @@ export enum TokenType {
     Hashtag,
     At,
     Exclamation,
+    QuestionMark,
+    Pipe,
     Identifier,
     Number,
     String,

@@ -53,7 +53,7 @@ export default class Lexer {
 				continue;
             }
 
-			if ('.,=:;_\\&^$#@!'.includes(this.current()!)) {
+			if ('.,=:;_\\&^$#@!?|'.includes(this.current()!)) {
 				this.lex_etc(tokens);
 				continue;
             }
@@ -166,6 +166,8 @@ export default class Lexer {
 		else if (this.current() == '#') type = TokenType.Hashtag;
 		else if (this.current() == '@') type = TokenType.At;
 		else if (this.current() == '!') type = TokenType.Exclamation;
+		else if (this.current() == '?') type = TokenType.QuestionMark;
+		else if (this.current() == '|') type = TokenType.Pipe;
         if (type == null) throw new LexerError(`Failed to lex etc... Instead got '${this.current()}'.`, pos);
 		this.advance();
 		tokens.push(new Token(type, pos));
