@@ -200,7 +200,7 @@ export default class Lexer {
         const pos = this.position();
 		let identifier = '';
         while (this.current()) {
-            if (' \n\t{}[]();+-*%/.,='.includes(this.current()!)) 
+            if (' \n\t{}[]();:+-*%/\\.,='.includes(this.current()!)) 
                 break;
             identifier += this.current();
             this.advance();
