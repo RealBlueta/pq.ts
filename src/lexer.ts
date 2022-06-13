@@ -125,7 +125,7 @@ export default class Lexer {
     // Lexing Functions (Lexums)
     lex_binary_operator(tokens: Token[]): void {
         const pos = this.position();
-        let type = null;
+        let type: TokenType | null = null;
         if (this.current() == '+') type = TokenType.Plus;
 		else if (this.current() == '-') type = TokenType.Minus;
 		else if (this.current() == '/') type = TokenType.Slash;
@@ -146,7 +146,7 @@ export default class Lexer {
 
     lex_brackets(tokens: Token[]): void {
         const pos = this.position();
-        let type = null;
+        let type: TokenType | null = null;
 		if (this.current() == '{') type = TokenType.LeftCurlyBracket;
 		else if (this.current() == '}') type = TokenType.RightCurlyBracket;
 		else if (this.current() == '[') type = TokenType.LeftAngleBracket;
@@ -160,7 +160,7 @@ export default class Lexer {
 
     lex_etc(tokens: Token[]): void {
         const pos = this.position();
-        let type = null;
+        let type: TokenType | null = null;
         if (this.current() == '.') type = TokenType.Period;
 		else if (this.current() == ',') type = TokenType.Comma;
 		else if (this.current() == ';') type = TokenType.Semicolon;
