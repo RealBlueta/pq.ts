@@ -188,9 +188,16 @@ export default class Lexer {
         const pos = this.position();
 		let string = '';
 		this.advance(1); // skip " '
-		while (this.current() && !("\"'`".includes(this.current()!))) {
+		while (this.current()) {
+            if (this.current() == '\\') {
+                this.advance();
+                string += this.current();
+                this.advance();
+            }
+            if ('\'"`'.includes(this.current()!))
+                break;
 			string += this.current();
-			this.advance();
+            this.advance();
         }
 		if (!this.current()) 
 			throw new LexerError("Unclosed string literal", pos);
