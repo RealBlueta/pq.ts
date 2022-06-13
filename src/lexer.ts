@@ -228,6 +228,6 @@ export default class Lexer {
     }
 
     is_numeric(input: string): boolean {
-        return '123456789'.includes(input);
+        return '1234567890'.includes(input);
     }
 }
