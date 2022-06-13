@@ -1,10 +1,5 @@
 import { LexerError, Position, Token, TokenType } from "./types";
 
-function TODO(text: string): void {
-    console.log("TODO:", text);
-    process.exit(0);
-}
-
 export default class Lexer {
     private cursor: number;
     private row: number;
@@ -185,7 +180,17 @@ export default class Lexer {
     }
 
     lex_string(tokens: Token[]): void {
-        TODO('string');
+        const pos = this.position();
+		let string = '';
+		this.advance(2); // skip " '
+		while (this.current() && !("\"'".includes(this.current()!))) {
+			string += this.current();
+			this.advance();
+        }
+		if (!this.current()) 
+			throw new LexerError("Unclosed string literal", pos);
+		this.advance(2); // skip " '
+		tokens.push(new Token(TokenType.String, pos, string));
     }
     
     lex_identifier(tokens: Token[]): void {
