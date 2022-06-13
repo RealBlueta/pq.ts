@@ -37,5 +37,5 @@ export enum TokenType {
 }
 
 export class Token {
-    constructor(public type: TokenType, position: Position, contents: number | string | null) {}
+    constructor(public type: TokenType, public position: Position, public contents: number | string | null = null) {}
 }
