@@ -7,14 +7,16 @@ export enum ExpressionType {
     Access = 'AccessExpresion'
 }
 
-export class BinaryNode {}
+export class Node {}
 
-export class BlockNode {}
+export class BinaryNode extends Node {}
 
-export class FunctionNode {}
+export class BlockNode extends Node {}
 
-export class VariableNode {}
+export class FunctionNode extends Node {}
 
-export class CallNode {}
+export class VariableNode extends Node {}
 
-export class AccessNode {}
+export class CallNode extends Node {}
+
+export class AccessNode extends Node {}
