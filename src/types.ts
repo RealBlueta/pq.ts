@@ -36,4 +36,6 @@ export enum TokenType {
     EOF
 }
 
-export class Token {}
+export class Token {
+    constructor(public type: TokenType, position: Position, contents: number | string | null) {}
+}
