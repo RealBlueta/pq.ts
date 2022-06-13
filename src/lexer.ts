@@ -188,7 +188,7 @@ export default class Lexer {
         const pos = this.position();
 		let string = '';
         let string_type = this.current();
-		this.advance(1); // skip " '
+		this.advance(1); // skip " ' `
 		while (this.current()) {
             if (this.current() == '\\' && this.peek(1) == string_type) {
                 this.advance();
@@ -203,7 +203,7 @@ export default class Lexer {
         }
 		if (!this.current()) 
 			throw new LexerError("Unclosed string literal", pos);
-		this.advance(1); // skip " '
+		this.advance(1); // skip " ' `
 		tokens.push(new Token(TokenType.String, pos, string));
     }
     
