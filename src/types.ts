@@ -1,8 +1,9 @@
 import Lexer from "./lexer";
 
 export type Position = {
-    line: number;
+    row: number;
     column: number;
+    file: string;
 };
 
 export enum TokenType {
@@ -39,9 +40,9 @@ export enum TokenType {
 }
 
 export class LexerError extends Error {
-    constructor(message: string, lexer: Lexer) {
+    constructor(message: string, position: Position) {
         super();
-        this.message = `${message} (${lexer.file_name}:${lexer.row}:${lexer.col})`;
+        this.message = `${message} (${position.file}:${position.row}:${position.column})`;
         this.stack = undefined;
     }
 }
