@@ -41,14 +41,6 @@ export enum TokenType {
     EOF = 'EndOfFile'
 }
 
-export class LexerError extends Error {
-    constructor(message: string, position: Position) {
-        super();
-        this.message = `${message} (${position.file}:${position.row+1}:${position.column + 1})`;
-        this.stack = undefined;
-    }
-}
-
 export class Token {
     constructor(public type: TokenType, public position: Position, public contents: number | string | null = null) {}
 }
