@@ -1,1 +1,5 @@
-export default class Interpreter {}
+export default class Interpreter {
+    constructor() {}
+
+    run() {}
+}
