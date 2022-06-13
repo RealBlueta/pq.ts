@@ -31,7 +31,7 @@ export default class Lexer {
     run(): Token[] { 
         const tokens: Token[] = []; 
         while (this.current()) {
-			if (this.current() == ' ') {
+			if (' \r'.includes(this.current()!)) {
 				this.consume_space();
 				continue;
             }
