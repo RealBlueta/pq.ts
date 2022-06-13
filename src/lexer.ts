@@ -121,6 +121,7 @@ export default class Lexer {
         if (this.current() == '+') type = TokenType.Plus;
 		else if (this.current() == '-') type = TokenType.Minus;
 		else if (this.current() == '/') type = TokenType.Slash;
+		else if (this.current() == '*') type = TokenType.Asterisk;
         else if	(this.current() == '%') type = TokenType.Percent;
 		else if (this.current() == '>') type = TokenType.GreaterThan;		
 		else if (this.current() == '<') type = TokenType.LessThan;
